@@ -1,0 +1,234 @@
+1 % The Shawshank Redemption % 1994 % Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler % Crime % Frank Darabont % 9.3
+2 % The Godfather % 1972 % Marlon Brando, Al Pacino, James Caan, Richard S. Castellano % Crime % Francis Ford Coppola % 9.2
+3 % The Godfather: Part II % 1974 % Al Pacino, Robert Duvall, Diane Keaton, Robert De Niro % Crime % Francis Ford Coppola % 9.1
+4 % The Dark Knight % 2008 % Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine % Action % Christopher Nolan % 9.0
+5 % Pulp Fiction % 1994 % Tim Roth, Amanda Plummer, Laura Lovelace, John Travolta % Crime % Quentin Tarantino % 8.9
+6 % The Good, the Bad and the Ugly % 1966 % Eli Wallach, Clint Eastwood, Lee Van Cleef, Aldo Giuffrè % Western % Sergio Leone % 8.9
+7 % Schindler's List % 1993 % Liam Neeson, Ben Kingsley, Ralph Fiennes, Caroline Goodall % Biography % Steven Spielberg % 8.9
+8 % 12 Angry Men % 1957 % Martin Balsam, John Fiedler, Lee J. Cobb, E.G. Marshall % Drama % Sidney Lumet % 8.9
+9 % The Lord of the Rings: The Return of the King % 2003 % Noel Appleby, Ali Astin, Sean Astin, David Aston % Adventure % Peter Jackson % 8.9
+10 % Fight Club % 1999 % Edward Norton, Brad Pitt, Helena Bonham Carter, Meat Loaf % Drama % David Fincher % 8.9
+11 % The Lord of the Rings: The Fellowship of the Rin % 2001 % Alan Howard, Elijah Wood, Noel Appleby, Sean Astin % Adventure % Peter Jackson % 8.8
+12 % Star Wars: Episode V - The Empire Strikes Back % 1980 % Mark Hamill, Harrison Ford, Carrie Fisher, Billy Dee Williams % Action % Irvin Kershner % 8.8
+13 % Inception % 2010 % Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy % Action % Christopher Nolan % 8.8
+14 % Forrest Gump % 1994 % Tom Hanks, Rebecca Williams, Sally Field, Michael Conner Humphreys % Drama % Robert Zemeckis % 8.8
+15 % One Flew Over the Cuckoo's Nest % 1975 % Michael Berryman, Peter Brocco, Dean R. Brooks, Alonzo Brown % Drama % Milos Forman % 8.7
+16 % The Lord of the Rings: The Two Towers % 2002 % Bruce Allpress, Sean Astin, John Bach, Sala Baker % Action % Peter Jackson % 8.8
+17 % Goodfellas % 1990 % Robert De Niro, Ray Liotta, Joe Pesci, Lorraine Bracco % Biography % Martin Scorsese % 8.7
+18 % The Matrix % 1999 % Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving % Action % Andy Wachowski % 8.7
+19 % Star Wars: Episode IV - A New Hope % 1977 % Mark Hamill, Harrison Ford, Carrie Fisher, Peter Cushing % Action % George Lucas % 8.7
+20 % City of God % 2002 % Alexandre Rodrigues, Leandro Firmino, Phellipe Haagensen, Douglas Silva % Crime % Fernando Meirelles % 8.7
+21 % Se7en % 1995 % Morgan Freeman, Andrew Kevin Walker, Daniel Zacapa, Brad Pitt % Drama % David Fincher % 8.7
+22 % The Usual Suspects % 1995 % Stephen Baldwin, Gabriel Byrne, Benicio Del Toro, Kevin Pollak % Crime % Bryan Singer % 8.7
+23 % The Silence of the Lambs % 1991 % Jodie Foster, Lawrence A. Bonney, Kasi Lemmons, Lawrence T. Wrentz % Drama % Jonathan Demme % 8.6
+24 % It's a Wonderful Life % 1946 % James Stewart, Donna Reed, Lionel Barrymore, Thomas Mitchell % Drama % Frank Capra % 8.7
+25 % Once Upon a Time in the West % 1968 % Claudia Cardinale, Henry Fonda, Jason Robards, Charles Bronson % Western % Sergio Leone % 8.6
+26 % Life Is Beautiful % 1997 % Roberto Benigni, Nicoletta Braschi, Giorgio Cantarini, Giustino Durano % Comedy % Roberto Benigni % 8.6
+27 % Casablanca % 1942 % Humphrey Bogart, Ingrid Bergman, Paul Henreid, Claude Rains % Drama % Michael Curtiz % 8.6
+28 % American History X % 1998 % Edward Norton, Edward Furlong, Beverly D'Angelo, Jennifer Lien % Crime % Tony Kaye % 8.6
+29 % Psycho % 1960 % Anthony Perkins, Vera Miles, John Gavin, Janet Leigh % Horror % Alfred Hitchcock % 8.6
+30 % Rear Window % 1954 % James Stewart, Grace Kelly, Wendell Corey, Thelma Ritter % Mystery % Alfred Hitchcock % 8.6
+31 % Saving Private Ryan % 1998 % Tom Hanks, Tom Sizemore, Edward Burns, Barry Pepper % Action % Steven Spielberg % 8.6
+32 % City Lights % 1931 % Virginia Cherrill, Florence Lee, Harry Myers, Al Ernest Garcia % Comedy % Charles Chaplin % 8.6
+33 % Spirited Away % 2001 % Rumi Hiiragi, Miyu Irino, Mari Natsuki, Takashi Naitô % Animation % Hayao Miyazaki % 8.6
+34 % The Intouchables % 2011 % François Cluzet, Omar Sy, Anne Le Ny, Audrey Fleurot % Biography % Olivier Nakache % 8.6
+35 % Modern Times % 1936 % Charles Chaplin, Paulette Goddard, Henry Bergman, Tiny Sandford % Comedy % Charles Chaplin % 8.6
+36 % Terminator 2: Judgment Day % 1991 % Arnold Schwarzenegger, Linda Hamilton, Edward Furlong, Robert Patrick % Action % James Cameron % 8.5
+37 % Memento % 2000 % Guy Pearce, Carrie-Anne Moss, Joe Pantoliano, Mark Boone Junior % Mystery % Christopher Nolan % 8.5
+38 % The Pianist % 2002 % Adrien Brody, Emilia Fox, Michal Zebrowski, Ed Stoppard % Biography % Roman Polanski % 8.5
+39 % Sunset Blvd. % 1950 % William Holden, Gloria Swanson, Erich von Stroheim, Nancy Olson % Drama % Billy Wilder % 8.5
+40 % The Green Mile % 1999 % Tom Hanks, David Morse, Michael Clarke Duncan, Bonnie Hunt % Crime % Frank Darabont % 8.5
+41 % Dr. Strangelove or: How I Learned to Stop Worryi % 1964 % Peter Sellers, George C. Scott, Sterling Hayden, Keenan Wynn % Comedy % Stanley Kubrick % 8.5
+42 % Apocalypse Now % 1979 % Marlon Brando, Martin Sheen, Robert Duvall, Frederic Forrest % Drama % Francis Ford Coppola % 8.5
+43 % The Departed % 2006 % Leonardo DiCaprio, Matt Damon, Jack Nicholson, Mark Wahlberg % Crime % Martin Scorsese % 8.5
+44 % Gladiator % 2000 % Russell Crowe, Joaquin Phoenix, Connie Nielsen, Oliver Reed % Action % Ridley Scott % 8.5
+45 % Boyhood % 2014 % Ellar Coltrane, Patricia Arquette, Elijah Smith, Lorelei Linklater % Drama % Richard Linklater % 8.1
+46 % Back to the Future % 1985 % Michael J. Fox, Christopher Lloyd, Lea Thompson, Crispin Glover % Adventure % Robert Zemeckis % 8.5
+47 % Alien % 1979 % Tom Skerritt, Sigourney Weaver, Veronica Cartwright, Harry Dean Stanton % Horror % Ridley Scott % 8.5
+48 % The Dark Knight Rises % 2012 % Christian Bale, Gary Oldman, Tom Hardy, Joseph Gordon-Levitt % Action % Christopher Nolan % 8.5
+49 % The Prestige % 2006 % Hugh Jackman, Christian Bale, Michael Caine, Piper Perabo % Drama % Christopher Nolan % 8.5
+50 % The Lives of Others % 2006 % Martina Gedeck, Ulrich Mühe, Sebastian Koch, Ulrich Tukur % Drama % Florian Henckel von Donnersmarck % 8.5
+51 % Django Unchained % 2012 % Jamie Foxx, Christoph Waltz, Leonardo DiCaprio, Kerry Washington % Western % Quentin Tarantino % 8.5
+52 % The Great Dictator % 1940 % Charles Chaplin, Jack Oakie, Reginald Gardiner, Henry Daniell % Comedy % Charles Chaplin % 8.5
+53 % The Lion King % 1994 % Jonathan Taylor Thomas, Matthew Broderick, James Earl Jones, Jeremy Irons % Animation % Roger Allers % 8.5
+54 % The Shining % 1980 % Jack Nicholson, Shelley Duvall, Danny Lloyd, Scatman Crothers % Horror % Stanley Kubrick % 8.5
+55 % Cinema Paradiso % 1988 % Antonella Attili, Enzo Cannavale, Isa Danieli, Leo Gullotta % Drama % Giuseppe Tornatore % 8.5
+56 % American Beauty % 1999 % Kevin Spacey, Annette Bening, Thora Birch, Wes Bentley % Drama % Sam Mendes % 8.4
+57 % Paths of Glory % 1957 % Kirk Douglas, Ralph Meeker, Adolphe Menjou, George Macready % Drama % Stanley Kubrick % 8.5
+58 % Guardians of the Galaxy % 2014 % Chris Pratt, Zoe Saldana, Dave Bautista, Vin Diesel % Action % James Gunn % 8.2
+59 % North by Northwest % 1959 % Cary Grant, Eva Marie Saint, James Mason, Jessie Royce Landis % Adventure % Alfred Hitchcock % 8.4
+60 % Aliens % 1986 % Sigourney Weaver, Carrie Henn, Michael Biehn, Paul Reiser % Action % James Cameron % 8.4
+61 % Citizen Kane % 1941 % Joseph Cotten, Dorothy Comingore, Agnes Moorehead, Ruth Warrick % Drama % Orson Welles % 8.4
+62 % Vertigo % 1958 % James Stewart, Kim Novak, Barbara Bel Geddes, Tom Helmore % Mystery % Alfred Hitchcock % 8.4
+63 % Toy Story 3 % 2010 % Tom Hanks, Tim Allen, Joan Cusack, Ned Beatty % Animation % Lee Unkrich % 8.4
+64 % M % 1931 % Peter Lorre, Ellen Widmann, Inge Landgut, Otto Wernicke % Crime % Fritz Lang % 8.4
+65 % Das Boot % 1981 % Jürgen Prochnow, Herbert Grönemeyer, Klaus Wennemann, Hubertus Bengsch % Adventure % Wolfgang Petersen % 8.4
+66 % Oldboy % 2003 % Min-sik Choi, Ji-tae Yu, Hye-jeong Kang, Dae-han Ji % Drama % Chan-wook Park % 8.4
+67 % Princess Mononoke % 1997 % Billy Crudup, Billy Bob Thornton, Minnie Driver, John DiMaggio % Animation % Hayao Miyazaki % 8.4
+68 % A Clockwork Orange % 1971 % Malcolm McDowell, Patrick Magee, Michael Bates, Warren Clarke % Crime % Stanley Kubrick % 8.4
+69 % Taxi Driver % 1976 % Diahnne Abbott, Frank Adu, Victor Argo, Gino Ardito % Crime % Martin Scorsese % 8.4
+70 % Grave of the Fireflies % 1988 % Tsutomu Tatsumi, Ayano Shiraishi, Yoshiko Shinohara, Akemi Yamaguchi % Animation % Isao Takahata % 8.5
+71 % Reservoir Dogs % 1992 % Harvey Keitel, Tim Roth, Michael Madsen, Chris Penn % Crime % Quentin Tarantino % 8.4
+72 % Double Indemnity % 1944 % Fred MacMurray, Barbara Stanwyck, Edward G. Robinson, Porter Hall % Crime % Billy Wilder % 8.4
+73 % Once Upon a Time in America % 1984 % Robert De Niro, James Woods, Elizabeth McGovern, Joe Pesci % Crime % Sergio Leone % 8.4
+74 % Requiem for a Dream % 2000 % Ellen Burstyn, Jared Leto, Jennifer Connelly, Marlon Wayans % Drama % Darren Aronofsky % 8.4
+75 % Braveheart % 1995 % James Robinson, Sean Lawlor, Sandy Nelson, James Cosmo % Action % Mel Gibson % 8.4
+76 % To Kill a Mockingbird % 1962 % Gregory Peck, John Megna, Frank Overton, Rosemary Murphy % Drama % Robert Mulligan % 8.4
+77 % Lawrence of Arabia % 1962 % Peter O'Toole, Alec Guinness, Anthony Quinn, Jack Hawkins % Adventure % David Lean % 8.4
+78 % Eternal Sunshine of the Spotless Mind % 2004 % Jim Carrey, Kate Winslet, Gerry Robert Byrne, Elijah Wood % Drama % Michel Gondry % 8.4
+79 % Witness for the Prosecution % 1957 % Tyrone Power, Marlene Dietrich, Charles Laughton, Elsa Lanchester % Crime % Billy Wilder % 8.4
+80 % Full Metal Jacket % 1987 % Matthew Modine, Adam Baldwin, Vincent D'Onofrio, R. Lee Ermey % Drama % Stanley Kubrick % 8.3
+81 % Singin' in the Rain % 1952 % Gene Kelly, Donald O'Connor, Debbie Reynolds, Jean Hagen % Comedy % Stanley Donen % 8.4
+82 % The Sting % 1973 % Paul Newman, Robert Redford, Robert Shaw, Charles Durning % Comedy % George Roy Hill % 8.4
+83 % Bicycle Thieves % 1948 % Lamberto Maggiorani, Enzo Staiola, Lianella Carell, Gino Saltamerenda % Drama % Vittorio De Sica % 8.4
+84 % Amadeus % 1984 % F. Murray Abraham, Tom Hulce, Elizabeth Berridge, Roy Dotrice % Biography % Milos Forman % 8.4
+85 % Monty Python and the Holy Grail % 1975 % Graham Chapman, John Cleese, Eric Idle, Terry Gilliam % Adventure % Terry Gilliam % 8.3
+86 % Snatch. % 2000 % Benicio Del Toro, Dennis Farina, Vinnie Jones, Brad Pitt % Comedy % Guy Ritchie % 8.3
+87 % L.A. Confidential % 1997 % Kevin Spacey, Russell Crowe, Guy Pearce, James Cromwell % Crime % Curtis Hanson % 8.3
+88 % All About Eve % 1950 % Bette Davis, Anne Baxter, George Sanders, Celeste Holm % Drama % Joseph L. Mankiewicz % 8.4
+89 % Rashomon % 1950 % Toshirô Mifune, Machiko Kyô, Masayuki Mori, Takashi Shimura % Crime % Akira Kurosawa % 8.4
+90 % The Apartment % 1960 % Jack Lemmon, Shirley MacLaine, Fred MacMurray, Ray Walston % Comedy % Billy Wilder % 8.3
+91 % For a Few Dollars More % 1965 % Clint Eastwood, Lee Van Cleef, Gian Maria Volonté, Mario Brega % Western % Sergio Leone % 8.3
+92 % The Treasure of the Sierra Madre % 1948 % Humphrey Bogart, Walter Huston, Tim Holt, Bruce Bennett % Action % John Huston % 8.3
+93 % Some Like It Hot % 1959 % Marilyn Monroe, Tony Curtis, Jack Lemmon, George Raft % Comedy % Billy Wilder % 8.3
+94 % The Third Man % 1949 % Joseph Cotten, Alida Valli, Orson Welles, Trevor Howard % Film-Noir % Carol Reed % 8.3
+95 % The Kid % 1921 % Carl Miller, Edna Purviance, Jackie Coogan, Charles Chaplin % Comedy % Charles Chaplin % 8.4
+96 % Indiana Jones and the Last Crusade % 1989 % Harrison Ford, Sean Connery, Denholm Elliott, Alison Doody % Action % Steven Spielberg % 8.3
+97 % Inglourious Basterds % 2009 % Brad Pitt, Mélanie Laurent, Christoph Waltz, Eli Roth % Adventure % Quentin Tarantino % 8.3
+98 % A Separation % 2011 % Peyman Moaadi, Leila Hatami, Sareh Bayat, Shahab Hosseini % Drama % Asghar Farhadi % 8.4
+99 % 2001: A Space Odyssey % 1968 % Keir Dullea, Gary Lockwood, William Sylvester, Daniel Richter % Mystery % Stanley Kubrick % 8.3
+100 % Batman Begins % 2005 % Christian Bale, Michael Caine, Liam Neeson, Katie Holmes % Action % Christopher Nolan % 8.3
+101 % Yojimbo % 1961 % Toshirô Mifune, Tatsuya Nakadai, Yôko Tsukasa, Isuzu Yamada % Action % Akira Kurosawa % 8.4
+102 % Metropolis % 1927 % Alfred Abel, Gustav Fröhlich, Rudolf Klein-Rogge, Fritz Rasp % Drama % Fritz Lang % 8.3
+103 % Toy Story % 1995 % Tom Hanks, Tim Allen, Don Rickles, Jim Varney % Animation % John Lasseter % 8.3
+104 % Unforgiven % 1992 % Clint Eastwood, Gene Hackman, Morgan Freeman, Richard Harris % Western % Clint Eastwood % 8.3
+105 % Raging Bull % 1980 % Robert De Niro, Cathy Moriarty, Joe Pesci, Frank Vincent % Biography % Martin Scorsese % 8.3
+106 % Scarface % 1983 % Al Pacino, Steven Bauer, Michelle Pfeiffer, Mary Elizabeth Mastrantonio % Crime % Brian De Palma % 8.3
+107 % Chinatown % 1974 % Jack Nicholson, Faye Dunaway, John Huston, Perry Lopez % Drama % Roman Polanski % 8.3
+108 % Up % 2009 % Edward Asner, Christopher Plummer, Jordan Nagai, Bob Peterson % Animation % Pete Docter % 8.3
+109 % Die Hard % 1988 % Bruce Willis, Bonnie Bedelia, Reginald VelJohnson, Paul Gleason % Action % John McTiernan % 8.3
+110 % Downfall % 2004 % Bruno Ganz, Alexandra Maria Lara, Corinna Harfouch, Ulrich Matthes % Biography % Oliver Hirschbiegel % 8.3
+111 % The Great Escape % 1963 % Steve McQueen, James Garner, Richard Attenborough, James Donald % Adventure % John Sturges % 8.3
+112 % Like Stars on Earth % 2007 % Darsheel Safary, Aamir Khan, Tanay Chheda, Sachet Engineer % Drama % Aamir Khan % 8.5
+113 % Mr. Smith Goes to Washington % 1939 % Jean Arthur, James Stewart, Claude Rains, Edward Arnold % Drama % Frank Capra % 8.3
+114 % Pan's Labyrinth % 2006 % Ivana Baquero, Sergi López, Maribel Verdú, Doug Jones % Drama % Guillermo del Toro % 8.3
+115 % On the Waterfront % 1954 % Marlon Brando, Karl Malden, Lee J. Cobb, Rod Steiger % Crime % Elia Kazan % 8.3
+116 % Heat % 1995 % Al Pacino, Robert De Niro, Val Kilmer, Jon Voight % Action % Michael Mann % 8.3
+117 % The Bridge on the River Kwai % 1957 % William Holden, Alec Guinness, Jack Hawkins, Sessue Hayakawa % Adventure % David Lean % 8.3
+118 % The Hunt % 2012 % Mads Mikkelsen, Thomas Bo Larsen, Annika Wedderkopp, Lasse Fogelstrøm % Drama % Thomas Vinterberg % 8.3
+119 % The Wolf of Wall Street % 2013 % Leonardo DiCaprio, Jonah Hill, Margot Robbie, Matthew McConaughey % Biography % Martin Scorsese % 8.2
+120 % 3 Idiots % 2009 % Aamir Khan, Madhavan, Sharman Joshi, Kareena Kapoor % Comedy % Rajkumar Hirani % 8.5
+121 % The Seventh Seal % 1957 % Gunnar Björnstrand, Bengt Ekerot, Nils Poppe, Max von Sydow % Drama % Ingmar Bergman % 8.3
+122 % Good Will Hunting % 1997 % Matt Damon, Robin Williams, Ben Affleck, Stellan Skarsgård % Drama % Gus Van Sant % 8.3
+123 % My Neighbor Totoro % 1988 % Chika Sakamoto, Hitoshi Takagi, Noriko Hidaka, Shigesato Itoi % Animation % Hayao Miyazaki % 8.3
+124 % The Elephant Man % 1980 % Anthony Hopkins, John Hurt, Anne Bancroft, John Gielgud % Biography % David Lynch % 8.2
+125 % Wild Strawberries % 1957 % Victor Sjöström, Bibi Andersson, Ingrid Thulin, Gunnar Björnstrand % Drama % Ingmar Bergman % 8.3
+126 % The Gold Rush % 1925 % Charles Chaplin, Mack Swain, Tom Murray, Henry Bergman % Adventure % Charles Chaplin % 8.3
+127 % Ran % 1985 % Tatsuya Nakadai, Akira Terao, Jinpachi Nezu, Daisuke Ryû % Action % Akira Kurosawa % 8.3
+128 % Blade Runner % 1982 % Harrison Ford, Rutger Hauer, Sean Young, Edward James Olmos % Sci-Fi % Ridley Scott % 8.2
+129 % Lock, Stock and Two Smoking Barrels % 1998 % Jason Flemyng, Dexter Fletcher, Nick Moran, Jason Statham % Comedy % Guy Ritchie % 8.2
+130 % The General % 1926 % Buster Keaton, Marion Mack, Glen Cavender, Jim Farley % Action % Clyde Bruckman % 8.3
+131 % Ikiru % 1952 % Takashi Shimura, Shin'ichi Himori, Haruo Tanaka, Minoru Chiaki % Drama % Akira Kurosawa % 8.3
+132 % X-Men: Days of Future Past % 2014 % Hugh Jackman, James McAvoy, Michael Fassbender, Jennifer Lawrence % Action % Bryan Singer % 8.1
+133 % Dil Chahta Hai % 2001 % Aamir Khan, Saif Ali Khan, Akshaye Khanna, Preity Zinta % Comedy % Farhan Akhtar % 8.4
+134 % Gran Torino % 2008 % Clint Eastwood, Christopher Carley, Bee Vang, Ahney Her % Drama % Clint Eastwood % 8.2
+135 % The Big Lebowski % 1998 % Jeff Bridges, John Goodman, Julianne Moore, Steve Buscemi % Comedy % Joel Coen % 8.2
+136 % Rebecca % 1940 % Laurence Olivier, Joan Fontaine, George Sanders, Judith Anderson % Mystery % Alfred Hitchcock % 8.2
+137 % Casino % 1995 % Robert De Niro, Sharon Stone, Joe Pesci, James Woods % Biography % Martin Scorsese % 8.2
+138 % Warrior % 2011 % Joel Edgerton, Tom Hardy, Nick Nolte, Jennifer Morrison % Drama % Gavin O'Connor % 8.2
+139 % V for Vendetta % 2005 % Natalie Portman, Hugo Weaving, Stephen Rea, Stephen Fry % Action % James McTeigue % 8.2
+140 % It Happened One Night % 1934 % Clark Gable, Claudette Colbert, Walter Connolly, Roscoe Karns % Comedy % Frank Capra % 8.2
+141 % The Deer Hunter % 1978 % Robert De Niro, John Cazale, John Savage, Christopher Walken % Drama % Michael Cimino % 8.2
+142 % Cool Hand Luke % 1967 % Paul Newman, George Kennedy, J.D. Cannon, Lou Antonio % Crime % Stuart Rosenberg % 8.2
+143 % Rush % 2013 % Chris Hemsworth, Daniel Brühl, Olivia Wilde, Alexandra Maria Lara % Action % Ron Howard % 8.2
+144 % Howl's Moving Castle % 2004 % Chieko Baishô, Takuya Kimura, Akihiro Miwa, Tatsuya Gashûin % Animation % Hayao Miyazaki % 8.2
+145 % Fargo % 1996 % William H. Macy, Steve Buscemi, Peter Stormare, Kristin Rudrüd % Crime % Joel Coen % 8.2
+146 % The Maltese Falcon % 1941 % Humphrey Bogart, Mary Astor, Gladys George, Peter Lorre % Crime % John Huston % 8.2
+147 % Trainspotting % 1996 % Ewan McGregor, Ewen Bremner, Jonny Lee Miller, Kevin McKidd % Drama % Danny Boyle % 8.2
+148 % Gone with the Wind % 1939 % Thomas Mitchell, Barbara O'Neil, Vivien Leigh, Evelyn Keyes % Drama % Victor Fleming % 8.2
+149 % Into the Wild % 2007 % Emile Hirsch, Marcia Gay Harden, William Hurt, Jena Malone % Adventure % Sean Penn % 8.2
+150 % Judgment at Nuremberg % 1961 % Spencer Tracy, Burt Lancaster, Richard Widmark, Marlene Dietrich % Drama % Stanley Kramer % 8.3
+151 % Hotel Rwanda % 2004 % Xolani Mali, Don Cheadle, Desmond Dube, Hakeem Kae-Kazim % Drama % Terry George % 8.2
+152 % 12 Years a Slave % 2013 % Chiwetel Ejiofor, Dwight Henry, Dickie Gravois, Bryan Batt % Biography % Steve McQueen % 8.1
+153 % A Beautiful Mind % 2001 % Russell Crowe, Ed Harris, Jennifer Connelly, Christopher Plummer % Biography % Ron Howard % 8.2
+154 % The Sixth Sense % 1999 % Bruce Willis, Haley Joel Osment, Toni Collette, Olivia Williams % Drama % M. Night Shyamalan % 8.2
+155 % Dial M for Murder % 1954 % Ray Milland, Grace Kelly, Robert Cummings, John Williams % Crime % Alfred Hitchcock % 8.2
+156 % The Thing % 1982 % Kurt Russell, Wilford Brimley, T.K. Carter, David Clennon % Horror % John Carpenter % 8.2
+157 % Butch Cassidy and the Sundance Kid % 1969 % Paul Newman, Robert Redford, Katharine Ross, Strother Martin % Biography % George Roy Hill % 8.2
+158 % Kill Bill: Vol. 1 % 2003 % Uma Thurman, Lucy Liu, Vivica A. Fox, Daryl Hannah % Action % Quentin Tarantino % 8.1
+159 % No Country for Old Men % 2007 % Tommy Lee Jones, Javier Bardem, Josh Brolin, Woody Harrelson % Crime % Ethan Coen % 8.1
+160 % Finding Nemo % 2003 % Albert Brooks, Ellen DeGeneres, Alexander Gould, Willem Dafoe % Animation % Andrew Stanton % 8.2
+161 % Platoon % 1986 % Tom Berenger, Keith David, Willem Dafoe, Forest Whitaker % Drama % Oliver Stone % 8.1
+162 % The Wages of Fear % 1953 % Yves Montand, Charles Vanel, Folco Lulli, Peter van Eyck % Adventure % Henri-Georges Clouzot % 8.3
+163 % Mary and Max % 2009 % Toni Collette, Philip Seymour Hoffman, Barry Humphries, Eric Bana % Animation % Adam Elliot % 8.2
+164 % The Grand Budapest Hotel % 2014 % Ralph Fiennes, F. Murray Abraham, Mathieu Amalric, Adrien Brody % Adventure % Wes Anderson % 8.1
+165 % Life of Brian % 1979 % Graham Chapman, John Cleese, Terry Gilliam, Eric Idle % Comedy % Terry Jones % 8.2
+166 % Sin City % 2005 % Jessica Alba, Devon Aoki, Alexis Bledel, Powers Boothe % Crime % Frank Miller % 8.1
+167 % Annie Hall % 1977 % Woody Allen, Diane Keaton, Tony Roberts, Carol Kane % Comedy % Woody Allen % 8.1
+168 % Network % 1976 % Faye Dunaway, William Holden, Peter Finch, Robert Duvall % Drama % Sidney Lumet % 8.2
+169 % Touch of Evil % 1958 % Charlton Heston, Janet Leigh, Orson Welles, Joseph Calleia % Crime % Orson Welles % 8.2
+170 % Diabolique % 1955 % Simone Signoret, Véra Clouzot, Paul Meurisse, Charles Vanel % Horror % Henri-Georges Clouzot % 8.2
+171 % Incendies % 2010 % Mustafa Kamel, Hussein Sami, Rémy Girard, Mélissa Désormeaux-Poulin % Drama % Denis Villeneuve % 8.2
+172 % The Princess Bride % 1987 % Cary Elwes, Mandy Patinkin, Chris Sarandon, Christopher Guest % Adventure % Rob Reiner % 8.2
+173 % Stand by Me % 1986 % Wil Wheaton, River Phoenix, Corey Feldman, Jerry O'Connell % Adventure % Rob Reiner % 8.1
+174 % There Will Be Blood % 2007 % Daniel Day-Lewis, Martin Stringer, Matthew Braden Stringer, Jacob Stringer % Drama % Paul Thomas Anderson % 8.1
+175 % Ben-Hur % 1959 % Charlton Heston, Jack Hawkins, Haya Harareet, Stephen Boyd % Adventure % William Wyler % 8.1
+176 % The Wizard of Oz % 1939 % Judy Garland, Frank Morgan, Ray Bolger, Bert Lahr % Adventure % Victor Fleming % 8.1
+177 % The Avengers % 2012 % Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth % Action % Joss Whedon % 8.2
+178 % Million Dollar Baby % 2004 % Clint Eastwood, Hilary Swank, Morgan Freeman, Jay Baruchel % Drama % Clint Eastwood % 8.1
+179 % The Grapes of Wrath % 1940 % Henry Fonda, Jane Darwell, John Carradine, Charley Grapewin % Drama % John Ford % 8.2
+180 % In the Name of the Father % 1993 % Alison Crosbie, Daniel Day-Lewis, Philip King, Emma Thompson % Biography % Jim Sheridan % 8.1
+181 % The Best Years of Our Lives % 1946 % Myrna Loy, Fredric March, Dana Andrews, Teresa Wright % Drama % William Wyler % 8.2
+182 % The Bourne Ultimatum % 2007 % Matt Damon, Julia Stiles, David Strathairn, Scott Glenn % Action % Paul Greengrass % 8.1
+183 % Donnie Darko % 2001 % Jake Gyllenhaal, Holmes Osborne, Maggie Gyllenhaal, Daveigh Chase % Drama % Richard Kelly % 8.1
+184 % Strangers on a Train % 1951 % Farley Granger, Ruth Roman, Robert Walker, Leo G. Carroll % Crime % Alfred Hitchcock % 8.1
+185 % Persona % 1966 % Bibi Andersson, Liv Ullmann, Margaretha Krook, Gunnar Björnstrand % Drama % Ingmar Bergman % 8.2
+186 % Gandhi % 1982 % Ben Kingsley, Candice Bergen, Edward Fox, John Gielgud % Biography % Richard Attenborough % 8.1
+187 % Jaws % 1975 % Roy Scheider, Robert Shaw, Richard Dreyfuss, Lorraine Gary % Drama % Steven Spielberg % 8.1
+188 % High Noon % 1952 % Gary Cooper, Thomas Mitchell, Lloyd Bridges, Katy Jurado % Western % Fred Zinnemann % 8.1
+189 % Infernal Affairs % 2002 % Andy Lau, Tony Chiu Wai Leung, Anthony Chau-Sang Wong, Eric Tsang % Crime % Wai-Keung Lau % 8.1
+190 % The King's Speech % 2010 % Colin Firth, Helena Bonham Carter, Derek Jacobi, Robert Portal % Biography % Tom Hooper % 8.1
+191 % Twelve Monkeys % 1995 % Joseph Melito, Bruce Willis, Jon Seda, Michael Chance % Mystery % Terry Gilliam % 8.1
+192 % Notorious % 1946 % Cary Grant, Ingrid Bergman, Claude Rains, Louis Calhern % Drama % Alfred Hitchcock % 8.1
+193 % The Terminator % 1984 % Arnold Schwarzenegger, Michael Biehn, Linda Hamilton, Paul Winfield % Action % James Cameron % 8.1
+194 % Stalker % 1979 % Alisa Freyndlikh, Aleksandr Kaydanovskiy, Anatoliy Solonitsyn, Nikolay Grinko % Drama % Andrei Tarkovsky % 8.2
+195 % Harry Potter and the Deathly Hallows: Part 2 % 2011 % Ralph Fiennes, Michael Gambon, Alan Rickman, Daniel Radcliffe % Adventure % David Yates % 8.1
+196 % Shutter Island % 2010 % Leonardo DiCaprio, Mark Ruffalo, Ben Kingsley, Max von Sydow % Mystery % Martin Scorsese % 8.1
+197 % Ip Man % 2008 % Donnie Yen, Simon Yam, Ka Tung Lam, Siu-Wong Fan % Action % Wilson Yip % 8.1
+198 % Groundhog Day % 1993 % Bill Murray, Andie MacDowell, Chris Elliott, Stephen Tobolowsky % Comedy % Harold Ramis % 8.1
+199 % Fanny and Alexander % 1982 % Kristina Adolphson, Börje Ahlstedt, Pernilla Allwin, Kristian Almgren % Drama % Ingmar Bergman % 8.2
+200 % Rocky % 1976 % Sylvester Stallone, Talia Shire, Burt Young, Carl Weathers % Drama % John G. Avildsen % 8.1
+201 % The Night of the Hunter % 1955 % Robert Mitchum, Shelley Winters, Lillian Gish, James Gleason % Crime % Charles Laughton % 8.1
+202 % Before Sunrise % 1995 % Ethan Hawke, Julie Delpy, Andrea Eckert, Hanno Pöschl % Drama % Richard Linklater % 8.1
+203 % Dog Day Afternoon % 1975 % Penelope Allen, Sully Boyar, John Cazale, Beulah Garrick % Crime % Sidney Lumet % 8.1
+204 % Lagaan: Once Upon a Time in India % 2001 % Aamir Khan, Gracy Singh, Rachel Shelley, Paul Blackthorne % Adventure % Ashutosh Gowariker % 8.3
+205 % Pirates of the Caribbean: The Curse of the Black % 2003 % Johnny Depp, Geoffrey Rush, Orlando Bloom, Keira Knightley % Adventure % Gore Verbinski % 8.1
+206 % Her % 2013 % Joaquin Phoenix, Lynn Adrianna, Lisa Renee Pitts, Gabe Gomez % Drama % Spike Jonze % 8.0
+207 % Monsters, Inc. % 2001 % John Goodman, Billy Crystal, Mary Gibbs, Steve Buscemi % Animation % Pete Docter % 8.1
+208 % La Haine % 1995 % Vincent Cassel, Hubert Koundé, Saïd Taghmaoui, Abdel Ahmed Ghili % Crime % Mathieu Kassovitz % 8.1
+209 % Barry Lyndon % 1975 % Ryan O'Neal, Marisa Berenson, Patrick Magee, Hardy Krüger % Drama % Stanley Kubrick % 8.1
+210 % Who's Afraid of Virginia Woolf? % 1966 % Elizabeth Taylor, Richard Burton, George Segal, Sandy Dennis % Drama % Mike Nichols % 8.1
+211 % The Battle of Algiers % 1966 % Brahim Hadjadj, Jean Martin, Yacef Saadi, Samia Kerbash % Crime % Gillo Pontecorvo % 8.2
+212 % The Big Sleep % 1946 % Humphrey Bogart, Lauren Bacall, John Ridgely, Martha Vickers % Crime % Howard Hawks % 8.1
+213 % Memories of Murder % 2003 % Kang-ho Song, Sang-kyung Kim, Roe-ha Kim, Jae-ho Song % Crime % Joon-ho Bong % 8.1
+214 % A Fistful of Dollars % 1964 % Clint Eastwood, Marianne Koch, Gian Maria Volonté, Wolfgang Lukschy % Action % Sergio Leone % 8.1
+215 % Castle in the Sky % 1986 % Anna Paquin, James Van Der Beek, Cloris Leachman, Mark Hamill % Animation % Hayao Miyazaki % 8.1
+216 % The Graduate % 1967 % Anne Bancroft, Dustin Hoffman, Katharine Ross, William Daniels % Comedy % Mike Nichols % 8.0
+217 % How to Train Your Dragon 2 % 2014 % Jay Baruchel, Cate Blanchett, Gerard Butler, Craig Ferguson % Animation % Dean DeBlois % 8.0
+218 % Roman Holiday % 1953 % Gregory Peck, Audrey Hepburn, Eddie Albert, Hartley Power % Comedy % William Wyler % 8.1
+219 % The Help % 2011 % Emma Stone, Viola Davis, Bryce Dallas Howard, Octavia Spencer % Drama % Tate Taylor % 8.1
+220 % The Truman Show % 1998 % Jim Carrey, Laura Linney, Noah Emmerich, Natascha McElhone % Drama % Peter Weir % 8.1
+221 % The Hustler % 1961 % Paul Newman, Jackie Gleason, Piper Laurie, George C. Scott % Drama % Robert Rossen % 8.1
+222 % The Celebration % 1998 % Ulrich Thomsen, Henning Moritzen, Thomas Bo Larsen, Paprika Steen % Drama % Thomas Vinterberg % 8.1
+223 % Jurassic Park % 1993 % Sam Neill, Laura Dern, Jeff Goldblum, Richard Attenborough % Adventure % Steven Spielberg % 8.0
+224 % In the Mood for Love % 2000 % Maggie Cheung, Tony Chiu Wai Leung, Ping Lam Siu, Tung Cho 'Joe' Cheung % Drama % Kar Wai Wong % 8.1
+225 % Slumdog Millionaire % 2008 % Dev Patel, Saurabh Shukla, Anil Kapoor, Rajendranath Zutshi % Drama % Danny Boyle % 8.0
+226 % Beauty and the Beast % 1991 % Paige O'Hara, Robby Benson, Richard White, Jerry Orbach % Animation % Gary Trousdale % 8.1
+227 % Stalag 17 % 1953 % William Holden, Don Taylor, Otto Preminger, Robert Strauss % Comedy % Billy Wilder % 8.1
+228 % Rope % 1948 % Dick Hogan, John Dall, Farley Granger, Edith Evanson % Crime % Alfred Hitchcock % 8.1
+229 % A Christmas Story % 1983 % Melinda Dillon, Darren McGavin, Peter Billingsley, Scott Schwartz % Comedy % Bob Clark % 8.1
+230 % The Killing % 1956 % Sterling Hayden, Coleen Gray, Vince Edwards, Jay C. Flippen % Crime % Stanley Kubrick % 8.1
+231 % Before Sunset % 2004 % Ethan Hawke, Julie Delpy, Vernon Dobtcheff, Louise Lemoine Torres % Drama % Richard Linklater % 8.1
+232 % The Raid 2 % 2014 % Iko Uwais, Arifin Putra, Tio Pakusodewo, Oka Antara % Action % Gareth Evans % 8.1
+233 % Papillon % 1973 % Steve McQueen, Dustin Hoffman, Victor Jory, Don Gordon % Biography % Franklin J. Schaffner % 8.1
+234 % Swades % 2004 % Shah Rukh Khan, Gayatri Joshi, Kishori Balal, Smith Seth % Drama % Ashutosh Gowariker % 8.4

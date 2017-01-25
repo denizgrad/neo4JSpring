@@ -1,8 +1,12 @@
 package com.metu.ceng553.service;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -14,6 +18,7 @@ import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Label;
 import org.neo4j.graphdb.Node;
 import org.neo4j.graphdb.Path;
+import org.neo4j.graphdb.Relationship;
 import org.neo4j.graphdb.RelationshipType;
 import org.neo4j.graphdb.ResourceIterator;
 import org.neo4j.graphdb.Transaction;
@@ -22,6 +27,7 @@ import org.neo4j.graphdb.traversal.Evaluators;
 import org.neo4j.graphdb.traversal.TraversalDescription;
 import org.neo4j.graphdb.traversal.Traverser;
 import org.neo4j.kernel.impl.util.StringLogger;
+
 
 //import com.metu.ceng553.entity.Actor;
 //import com.metu.ceng553.entity.Collector;
@@ -37,23 +43,223 @@ public class AppService  {
 		init = false;
 	}
 
+	private static enum RelTypes implements RelationshipType
+    {
+        ACTED_IN,
+        DIRECTED,
+        COLLECTS,
+        FOLLOWS
+    }
+	private static final String DB_PATH = "C:/NEO4JTEST";
+	public static GraphDatabaseService graphDb = null;
+	
+    Node firstNode;
+    Node secondNode;
+    Relationship relationship;
+    Label ACTOR;
+    Label COLLECTOR;
+    Label MOVIE;
+    Label DIRECTOR;
+    
+	public void initialize() {
+		
+        deleteFileOrDirectory( new File( DB_PATH ) );
+        graphDb = new GraphDatabaseFactory().newEmbeddedDatabase( DB_PATH );
+        registerShutdownHook( graphDb );
+        ACTOR = DynamicLabel.label("Actor");
+        MOVIE = DynamicLabel.label("Movie");
+        DIRECTOR = DynamicLabel.label("Director");
+        COLLECTOR = DynamicLabel.label("Collector");
+		  try ( Transaction tx = graphDb.beginTx() )
+	        {
+	        	BufferedReader br = null;
+	        	BufferedReader br2 = null;
+	        	BufferedReader br3 = null;
+	        	BufferedReader br4 = null;
+				HashMap<String, Long> actorListWithNodeId = new HashMap<>();
+				HashMap<String, Long> directorListWithNodeId = new HashMap<>();
+				HashMap<String, Long> collectorListWithNodeId = new HashMap<>();
+				HashMap<String, Long> movieListWithNodeId = new HashMap<>();
+	    		try {
+	    			String sCurrentLine;
+	    			br = new BufferedReader(new FileReader("CENG553\\FILMS.txt"));
+	    			
+
+	    			
+	    			int actorId = 2000;
+	    			int directorId = 3000;
+	    			while ((sCurrentLine = br.readLine()) != null) {
+	    				String[] featureList = sCurrentLine.split(" % ");
+	    				String[] actors = featureList[3].split(", ");
+	    				
+	    				
+	    				Node film = graphDb.createNode();
+	    				film.addLabel(MOVIE);
+	    				film.setProperty("id", featureList[0]);
+	    				film.setProperty("title", featureList[1]);
+	    				film.setProperty("released", featureList[2]);
+	    				film.setProperty("rating", featureList[6]);
+	    				movieListWithNodeId.put(featureList[0], film.getId());
+	    				
+	    				for(int i=0; i<actors.length; i++){
+	    					if(!actorListWithNodeId.containsKey(actors[i])){
+	    						if(directorListWithNodeId.containsKey(actors[i])){
+	    							Node director = graphDb.getNodeById(directorListWithNodeId.get(actors[i]));
+	    							director.addLabel(ACTOR);
+	    							director.setProperty("userid", directorId);
+	    							directorId++;
+	    							actorListWithNodeId.put(actors[i], director.getId());
+	    							director.createRelationshipTo( film, RelTypes.ACTED_IN);
+	    						}
+	    						else{
+	        						Node actor = graphDb.createNode();
+	        						actor.addLabel(ACTOR);
+	        						actor.setProperty("userid", actorId);
+	        						actorId++;
+	        						actor.setProperty("fullname", actors[i]);
+	        						actorListWithNodeId.put(actors[i], actor.getId());
+	        						actor.createRelationshipTo( film, RelTypes.ACTED_IN);
+	    						}
+	    					}
+	    					else{
+	    						Node actor = graphDb.getNodeById(actorListWithNodeId.get(actors[i]));
+	    						actor.createRelationshipTo(film, RelTypes.ACTED_IN);
+	    					}
+	    				}
+	    				
+	    				if(!directorListWithNodeId.containsKey(featureList[5])){
+	    					if(actorListWithNodeId.containsKey(featureList[5])){
+	    						Node actor = graphDb.getNodeById(actorListWithNodeId.get(featureList[5]));
+	    						actor.addLabel(DIRECTOR);
+	    						actor.setProperty("userid", directorId);
+	    						directorId++;
+	    						directorListWithNodeId.put(featureList[5], actor.getId());
+	    						actor.createRelationshipTo(film, RelTypes.DIRECTED);
+	    					}
+	    					else{
+	    						Node director = graphDb.createNode();
+	    						director.addLabel(DIRECTOR);
+	    						director.setProperty("userid", directorId);
+	    						directorId++;
+	    						director.setProperty("fullname", featureList[5]);
+	    						directorListWithNodeId.put(featureList[5], director.getId());
+	    						director.createRelationshipTo( film, RelTypes.DIRECTED);
+	    					}
+	    				}
+	    				else{
+	    					Node director = graphDb.getNodeById(directorListWithNodeId.get(featureList[5]));
+	    					director.createRelationshipTo( film, RelTypes.DIRECTED);
+	    				}
+	    				
+	    			/*	System.out.println("Id: "+featureList[0]);
+	    				System.out.println("Name: "+featureList[1]);
+	    				System.out.println("Release Year: "+featureList[2]);
+	    				System.out.println("Actors: "+featureList[3]);
+	    				System.out.println("Genre: "+featureList[4]);
+	    				System.out.println("Director: "+featureList[5]);
+	    				System.out.println("Rating: "+featureList[6]);
+	    			
+	    				*/
+	    				/*
+	    				for(int i=0; i<actors.length; i++){
+	    					System.out.println("Actor"+i+" "+actors[i]);
+	    				}
+	    				*/
+	    			}
+	    		} catch (IOException e) {
+	    			e.printStackTrace();
+	    		} finally {
+	    			try {
+	    				if (br != null)br.close();
+	    			} catch (IOException ex) {
+	    				ex.printStackTrace();
+	    			}
+	    		}	
+	    		
+	    		
+	    			try {
+	        			String sCurrentLine2;
+						br2 = new BufferedReader(new FileReader("CENG553\\collectors.txt"));
+		    			while ((sCurrentLine2 = br2.readLine()) != null){
+		    				String[] collectorFeatures = sCurrentLine2.split("%");
+		    				Node collector = graphDb.createNode();
+		    				collector.addLabel(COLLECTOR);
+		    				collector.setProperty("userid", collectorFeatures[0]);
+		    				collector.setProperty("fullname", collectorFeatures[1]);
+		    				collectorListWithNodeId.put(collectorFeatures[0], collector.getId());
+		    			}
+						
+					} catch (IOException e) {
+						e.printStackTrace();
+					}finally {
+		    			try {
+		    				if (br2 != null)br2.close();
+		    			} catch (IOException ex) {
+		    				ex.printStackTrace();
+		    			}
+		    		}	
+	    			
+	    			
+	    			try {
+	        			String sCurrentLine3;
+						br3 = new BufferedReader(new FileReader("CENG553\\follow.txt"));
+		    			while ((sCurrentLine3 = br3.readLine()) != null){
+		    				String[] followList = sCurrentLine3.split("%");
+		    				Node first = graphDb.getNodeById(collectorListWithNodeId.get(followList[0]));
+		    				Node second = graphDb.getNodeById(collectorListWithNodeId.get(followList[1]));
+		    				first.createRelationshipTo(second, RelTypes.FOLLOWS);
+		    			}
+						
+					} catch (IOException e) {
+						e.printStackTrace();
+					}finally {
+		    			try {
+		    				if (br3 != null)br3.close();
+		    			} catch (IOException ex) {
+		    				ex.printStackTrace();
+		    			}
+		    		}	
+	    			
+	    			try {
+	        			String sCurrentLine4;
+						br4 = new BufferedReader(new FileReader("CENG553\\collect.txt"));
+		    			while ((sCurrentLine4 = br4.readLine()) != null){
+		    				String[] collectList = sCurrentLine4.split("%");
+		    				Node first = graphDb.getNodeById(collectorListWithNodeId.get(collectList[0]));
+		    				Node second = graphDb.getNodeById(movieListWithNodeId.get(collectList[1]));
+		    				first.createRelationshipTo(second, RelTypes.COLLECTS);
+		    			}
+						
+					} catch (IOException e) {
+						e.printStackTrace();
+					}finally {
+		    			try {
+		    				if (br4 != null)br4.close();
+		    			} catch (IOException ex) {
+		    				ex.printStackTrace();
+		    			}
+		    		}	
+
+	    		tx.success();
+	        }
+		
+	}
 	public static void main(String[] args) {
-		GraphDatabaseFactory graphDbFactory = new GraphDatabaseFactory();
-		GraphDatabaseService graphDb = graphDbFactory.newEmbeddedDatabase("C:/TPNeo4jDB");
-		ExecutionEngine execEngine = new ExecutionEngine(graphDb,StringLogger.SYSTEM );
-		execEngine.execute("CREATE (timR:DIRECTOR {userid:1, name:\"Tim Robbins\"})"
-				+ " CREATE (charlizeT:Actor {userid:15, name:\"Charlize Theron\"})"
-				+ " CREATE (juliaR:Actor {userid:16, name:\"Julia Roberts\"})");
-		ExecutionResult execResult = execEngine.execute(" MATCH (a:Actor) RETURN a.name AS name, a.userid AS userid");
-		String results = execResult.dumpToString();
-		System.out.println(results);
+//		GraphDatabaseFactory graphDbFactory = new GraphDatabaseFactory();
+//		GraphDatabaseService graphDb = graphDbFactory.newEmbeddedDatabase("C:/TPNeo4jDB");
+//		ExecutionEngine execEngine = new ExecutionEngine(graphDb,StringLogger.SYSTEM );
+//		execEngine.execute("CREATE (timR:DIRECTOR {userid:1, name:\"Tim Robbins\"})"
+//				+ " CREATE (charlizeT:Actor {userid:15, name:\"Charlize Theron\"})"
+//				+ " CREATE (juliaR:Actor {userid:16, name:\"Julia Roberts\"})");
+//		ExecutionResult execResult = execEngine.execute(" MATCH (a:Actor) RETURN a.name AS name, a.userid AS userid");
+//		String results = execResult.dumpToString();
+//		System.out.println(results);
 	}
 	public static boolean  init = true;
 //	public void createActor(Actor actor) {
 //		// if so no native sql will be written to satisfy assigned task.
 //	}
-	private static final String DB_PATH = "C:/NEO4JTEST";
-	public static GraphDatabaseService graphDb = null;
+
 	public String sql1() {
 			ExecutionEngine execEngine = new ExecutionEngine(graphDb,StringLogger.SYSTEM_DEBUG);
         	ExecutionResult er = execEngine.execute("MATCH (actor:Actor:Director) RETURN actor");
@@ -100,48 +306,64 @@ public class AppService  {
     	Iterator<Long> n_column2 = er2.columnAs( "total" );
     	while(n_column2.hasNext()){
     		Long a = n_column2.next();
-    		System.out.println("Number Of Actors: "+a);
-    		
+    		return a.toString();
     	}
-        	ExecutionEngine ee = new ExecutionEngine(graphDb,StringLogger.SYSTEM_DEBUG);
-     	    ExecutionResult er = ee.execute("MATCH (a1:Actor {name:'Edward Norton'})-[:ACTED_IN]->(m:Movie) WITH a1,collect(m) as movies MATCH (a:Actor)-[:ACTED_IN]->(m:Movie) WHERE m IN movies AND a.name <> 'Edward Norton' WITH count(a) as count RETURN count ");
-     	   String results = er.dumpToString();
- 	      System.out.println(results);
-  	      results = results.replace("\r\n"," <br> ");
-  	    return  results;
-//        	Iterator<Long> n_column = er.columnAs( "total" );
-//        	String retStr = "";
-//        	while(n_column.hasNext()){
-//        		Long a = n_column.next();
-//        		retStr = "Number Of Actors: "+a;
-//        		
-//        	}
-//        	return retStr;
+  	    return  "0";
 	}
 
 	public String sql4() {
-			ExecutionEngine ee = new ExecutionEngine(graphDb,StringLogger.DEV_NULL);
-     	    ExecutionResult er = ee.execute(
-				  "MATCH (a1:Actor {name:\"Edward Norton\"})-[:ACTED_IN]->(m:Movie) "
-				+ "WITH a1,collect(m) as movies "
-				+ "MATCH (c:Collector)-[:COLLECTS]->(m:Movie) "
-				+ "WHERE ALL(m IN movies WHERE (c)-[:COLLECTS]->(m) ) "
-				+ "RETURN DISTINCT c.name AS name, c.userid AS userid");
-     	   String results = er.dumpToString();
- 	      System.out.println(results);
-  	      results = results.replace("\r\n"," <br> ");
-  	    return  results;
-//			Iterator<Node> n_column = er.columnAs("c");
-//			List<Collector> retList = new ArrayList<Collector>();
-//			StringBuilder sb = new StringBuilder();
-//			while (n_column.hasNext()) {
-//				Node a = n_column.next();
-//				retList.add(new Collector((Long) a.getProperty("userid"), (String) a.getProperty("fullname")));
-//			}
-//			for (Collector a : retList) {
-//				sb.append(a.toString() + "</br>");
-//			}
-//			return sb.toString();
+//			ExecutionEngine ee = new ExecutionEngine(graphDb,StringLogger.DEV_NULL);
+//     	    ExecutionResult er = ee.execute(
+//				  "MATCH (a1:Actor {name:\"Edward Norton\"})-[:ACTED_IN]->(m:Movie) "
+//				+ "WITH a1,collect(m) as movies "
+//				+ "MATCH (c:Collector)-[:COLLECTS]->(m:Movie) "
+//				+ "WHERE ALL(m IN movies WHERE (c)-[:COLLECTS]->(m) ) "
+//				+ "RETURN DISTINCT c.name AS name, c.userid AS userid");
+//     	   String results = er.dumpToString();
+// 	      System.out.println(results);
+//  	      results = results.replace("\r\n"," <br> ");
+//  	    return  results;
+		 try ( Transaction tx = graphDb.beginTx() )
+	        {
+		ArrayList<Object> nodeList = new ArrayList<>();
+    	ArrayList<Object> nodeAsilList = new ArrayList<>();
+    	int test1 = 0;
+    	int query4Temp = 0;
+    	for(Node node: graphDb.findNodesByLabelAndProperty(ACTOR, "fullname", "Edward Norton")){
+    		Traverser friendsTraverser = getActedIn(node);
+    		
+    		for ( Path friendPath : friendsTraverser )
+            {
+    			Traverser friendTraverser2 = getCollectIn((friendPath.endNode()));
+    			for(Path friendPath2 : friendTraverser2){
+    				if(query4Temp == 0){
+    					nodeList.add(friendPath2.endNode().getProperty("userid"));
+    				}
+    				else{
+    					if(nodeList.contains(friendPath2.endNode().getProperty("userid"))){
+    						nodeAsilList.add(friendPath2.endNode().getProperty("userid"));
+    					}
+    				}
+    			}
+    			if(query4Temp != 0){
+    				nodeList.clear();
+    				for (int i=0; i<nodeAsilList.size(); i++){
+    					nodeList.add(nodeAsilList.get(i));
+    				}
+    			}
+    			query4Temp++;
+    			System.out.println(friendPath.endNode().getProperty("title"));
+            }
+    	}
+    	StringBuilder sb = new StringBuilder();
+    	for(int i=0; i<nodeAsilList.size(); i++){
+    		for(Node x : graphDb.findNodesByLabelAndProperty(COLLECTOR, "userid", nodeAsilList.get(i))){
+    			sb.append(x.getProperty("userid")+" "+x.getProperty("fullname")+"<br>");
+    		}
+    	}
+    	System.out.println(test1);
+    	return sb.toString();
+        }
 	}
 
 	public String sql5() {
@@ -187,7 +409,7 @@ public class AppService  {
 	            }
 	        } );
 	    }
-	public void initialize() {
+	public void initializeDepr() {
 		
 		deleteFileOrDirectory( new File( DB_PATH ) );
 		System.out.println("DB deleted");
@@ -315,62 +537,56 @@ MATCH (n)-[r:FOLLOWS*0..2]-(m)
 WITH n, m, reduce(s = '', rel IN r | s + rel.name + ',') as rels
 RETURN n.name, m.name, rels;
 	 */
+	
 	public String sql6() {
-		ExecutionEngine execEngine = new ExecutionEngine(graphDb,StringLogger.SYSTEM );
-		ExecutionResult execResult = execEngine.execute("MATCH (m)-[r:FOLLOWS*0..3]->(n:Collector {userid:1001}) WITH n, m, reduce(s = '', rel IN r | s + rel.name + ',') as rels RETURN DISTINCT n.name, m.name, rels;");
-		String results = execResult.dumpToString();
-		System.out.println(results);
-	      results = results.replace("\r\n"," <br> ");
-  	    return  results;
-//        try ( Transaction tx = graphDb.beginTx() )
-//        {
-//		 Label COLLECTOR = DynamicLabel.label("Collector");
-//		 StringBuilder sb = new StringBuilder();
-//	        	ArrayList<Object> tempList = new ArrayList<>();
-//	        	ArrayList<Object> retList = new ArrayList<>();
-//	        	int degreeCounter = 0;
-//	        	int counter = 0;;
-//	        	System.out.println(counter);
-//	        	for(Node node: graphDb.findNodesByLabelAndProperty(COLLECTOR, "userid", 1001)){
-//	        		
-//	        		Traverser traverser1 = _followIN(node);
-//	        		for ( Path path : traverser1 ) {
-//	        			List<Node> list = new ArrayList<>();
-//	        			
-//	                }
-//	        	
-//	        	for(int i=0; i<retList.size(); i++){
-//	        		for(Node x : graphDb.findNodesByLabelAndProperty(COLLECTOR, "userid", retList.get(i))){
-//	        			sb.append(x.getProperty("userid")+" "+x.getProperty("name")+" <br>");
-//					}
-//				}
-//	        	
-//			}
-//	        	
-//		 return sb.toString();
-//        }
+//		ExecutionEngine execEngine = new ExecutionEngine(graphDb,StringLogger.SYSTEM_DEBUG );
+//		ExecutionResult execResult = execEngine.execute("MATCH (m)-[r:FOLLOWS*0..3]-(n:Collector {userid:1001}) WITH n, m, reduce(s = '', rel IN r | s + rel.name + ',') as rels RETURN DISTINCT n.name, m.name, rels;");
+//		String results = execResult.dumpToString();
+//		System.out.println(results);
+//	      results = results.replace("\r\n"," <br> ");
+	      
+	      StringBuilder sb = new StringBuilder();
+	        try ( Transaction tx = graphDb.beginTx() )
+	        {
+				for(Node node: graphDb.findNodesByLabelAndProperty(COLLECTOR, "userid", "1001")){
+					Traverser friendsTraverser = getFollowsOut(node);
+					for(Path friendPath : friendsTraverser){
+						Node nodew = friendPath.endNode();
+						sb.append(nodew.getProperty("fullname")+"<br>");
+					}
+					
+				}
+		  	    return  sb.toString();
+	        }
 	}
-		 
-		    private Traverser _followOUT(
-		            final Node person )
-		    {
-		        TraversalDescription td = graphDb.traversalDescription()
-		                .breadthFirst()
-		                .relationships( RelTypes.FOLLOWS, Direction.OUTGOING)
-		                .evaluator( Evaluators.excludeStartPosition() );
-		        return td.traverse( person );
-		    }
-		    private Traverser _followIN(
-		            final Node person )
-		    {
-		        TraversalDescription td = graphDb.traversalDescription()
-		                .breadthFirst()
-		                .relationships( RelTypes.FOLLOWS, Direction.INCOMING)
-		                .evaluator( Evaluators.excludeStartPosition() );
-		        return td.traverse( person );
-		    }
-		    private static enum RelTypes implements RelationshipType
-		    {
-		    	FOLLOWS
-		    }
+	private Traverser getActedIn(
+            final Node person )
+    {
+        TraversalDescription td = graphDb.traversalDescription()
+                .breadthFirst()
+                .relationships( RelTypes.ACTED_IN, Direction.OUTGOING )
+                .evaluator( Evaluators.excludeStartPosition() );
+        return td.traverse( person );
+    }
+    
+    private Traverser getCollectIn(
+            final Node person )
+    {
+        TraversalDescription td = graphDb.traversalDescription()
+                .breadthFirst()
+                .relationships( RelTypes.COLLECTS, Direction.INCOMING)
+                .evaluator( Evaluators.excludeStartPosition() );
+        return td.traverse( person );
+    }
+    
+    private Traverser getFollowsOut(
+            final Node person )
+    {
+        TraversalDescription td = graphDb.traversalDescription()
+                .breadthFirst()
+                .relationships( RelTypes.FOLLOWS, Direction.OUTGOING)
+                .evaluator( Evaluators.excludeStartPosition())
+                .evaluator(Evaluators.toDepth(2));
+        return td.traverse( person );
+    }
 }
