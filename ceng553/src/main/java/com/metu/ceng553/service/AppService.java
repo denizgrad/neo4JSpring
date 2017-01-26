@@ -314,11 +314,11 @@ public class AppService  {
 	public String sql4() {
 //			ExecutionEngine ee = new ExecutionEngine(graphDb,StringLogger.DEV_NULL);
 //     	    ExecutionResult er = ee.execute(
-//				  "MATCH (a1:Actor {name:\"Edward Norton\"})-[:ACTED_IN]->(m:Movie) "
+//				  "MATCH (a1:Actor {fullname:\"Edward Norton\"})-[:ACTED_IN]->(m:Movie) "
 //				+ "WITH a1,collect(m) as movies "
 //				+ "MATCH (c:Collector)-[:COLLECTS]->(m:Movie) "
 //				+ "WHERE ALL(m IN movies WHERE (c)-[:COLLECTS]->(m) ) "
-//				+ "RETURN DISTINCT c.name AS name, c.userid AS userid");
+//				+ "RETURN DISTINCT c.fullname AS name, c.userid AS userid");
 //     	   String results = er.dumpToString();
 // 	      System.out.println(results);
 //  	      results = results.replace("\r\n"," <br> ");
@@ -540,22 +540,26 @@ RETURN n.name, m.name, rels;
 	
 	public String sql6() {
 //		ExecutionEngine execEngine = new ExecutionEngine(graphDb,StringLogger.SYSTEM_DEBUG );
-//		ExecutionResult execResult = execEngine.execute("MATCH (m)-[r:FOLLOWS*0..3]-(n:Collector {userid:1001}) WITH n, m, reduce(s = '', rel IN r | s + rel.name + ',') as rels RETURN DISTINCT n.name, m.name, rels;");
+//		ExecutionResult execResult = execEngine.execute("MATCH (m)<-[r:FOLLOWS*0..3]-(n:Collector {userid:1001}) WITH n, m, reduce(s = '', rel IN r | s + rel.name + ',') as rels RETURN DISTINCT n.name, m.name, rels;");
 //		String results = execResult.dumpToString();
 //		System.out.println(results);
 //	      results = results.replace("\r\n"," <br> ");
-	      
+	      int depth = 3;
+	      int counter = 0;
 	      StringBuilder sb = new StringBuilder();
 	        try ( Transaction tx = graphDb.beginTx() )
 	        {
 				for(Node node: graphDb.findNodesByLabelAndProperty(COLLECTOR, "userid", "1001")){
-					Traverser friendsTraverser = getFollowsOut(node);
+					Traverser friendsTraverser = getFollowsOutDepth(depth, node);
+					sb.append("Depth: "+ depth +"<br>");
+					
 					for(Path friendPath : friendsTraverser){
 						Node nodew = friendPath.endNode();
+						counter++;
 						sb.append(nodew.getProperty("fullname")+"<br>");
 					}
-					
 				}
+				sb.insert(0,"Count: "+ counter +"<br>");
 		  	    return  sb.toString();
 	        }
 	}
@@ -579,14 +583,14 @@ RETURN n.name, m.name, rels;
         return td.traverse( person );
     }
     
-    private Traverser getFollowsOut(
+    private Traverser getFollowsOutDepth(int depth,
             final Node person )
     {
         TraversalDescription td = graphDb.traversalDescription()
                 .breadthFirst()
                 .relationships( RelTypes.FOLLOWS, Direction.OUTGOING)
                 .evaluator( Evaluators.excludeStartPosition())
-                .evaluator(Evaluators.toDepth(2));
+                .evaluator( Evaluators.toDepth(depth));
         return td.traverse( person );
     }
 }

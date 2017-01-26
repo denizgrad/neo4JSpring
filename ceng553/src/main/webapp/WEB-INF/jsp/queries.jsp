@@ -1,7 +1,7 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
-    <title>sunum</title>
+    <title>CENG 553 Queries</title>
 </head>
 <body>
 
@@ -21,7 +21,7 @@
             <input type="submit" value="List 10 collectors ( userid and fullname ) who collect The Shawshank Redemption."/>
 </form:form>
 <form:form method="POST" action="ceng553/q6">
-            <input type="submit" value="6"/>
+            <input type="submit" value="Depth 3 for 1001 followings"/>
 </form:form>
 </body>
 </html>
